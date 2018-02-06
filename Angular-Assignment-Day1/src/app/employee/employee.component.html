@@ -1,0 +1,100 @@
+<div class="container">
+    <h3>Employee form</h3>
+<form #form="ngForm" >
+        <div class="form-group">
+            <label for="firstnameId">First Name</label>
+            <input type="text" id="firstnameId" class="form-control" placeholder="First Name" name="firstname" required
+             [(ngModel)]="model.firstname">
+        </div>
+    <br>
+      <div class="form-group">
+                <label for="lastnameId">Last Name</label>
+                <input type="text" id="lastnameId" class="form-control" placeholder="Last Name" name="lastname" required 
+                [(ngModel)]="model.lastname">
+        </div>
+    <br>
+        <div class="form-group">
+                <label for="Emailid">Email Id</label>
+                <input type="email" id="Emailid" class="form-control" placeholder="Email Id" name="Email" required 
+                [(ngModel)]="model.Email">
+        </div>
+    <br>
+        <div class="form-group">
+                <label for="number">Phone Number</label>
+                <input type="tel" id="number" class="form-control" placeholder="Phone Number" name="phonenumber" required 
+                [(ngModel)]="model.phonenumber">
+        </div>
+    <br>
+        <div class="form-group">
+                <label for="add">Address</label>
+                <textarea  rows="2" cols="21" id="add" class="form-control" placeholder="Address" name="address" required 
+                [(ngModel)]="model.address"></textarea>
+        </div>
+    <br>
+        <div class="form-group">
+                <label for="uname">Username</label>
+                <input type="text" id="uname" class="form-control" placeholder="Username" name="username" required
+                 [(ngModel)]="model.username">
+        </div>
+    <br>
+        <div class="form-group">
+                <label for="pass">Password</label>
+                <input type="password" id="pass" class="form-control" placeholder="Password" name="password" required>
+        </div>
+    <br>
+     <label>Gender</label>
+        <div class="radio">
+            <label>
+                <input type="radio" name="gender" value="male" [(ngModel)]="model.gender">Male
+            </label>
+        </div>
+        <div class="radio">
+                <label>
+                    <input type="radio" name="gender" value="Female" [(ngModel)]="model.gender">Female
+                </label>
+        </div>
+    <br>
+
+    <div class="form-group">
+        <label>Qualification</label>
+        <select class="form-control"
+                name="qualifications"
+                [(ngModel)]="model.qualifications">
+            <option *ngFor="let quali of qualifications" [value]="quali">
+                {{quali}}
+            </option>
+        </select>
+        </div>
+    <br>
+
+    <div class="form-group">
+            <label>Experience</label>
+            <select class="form-control"
+                    name="Experience"
+                    [(ngModel)]="model.Experience">
+                <option *ngFor="let exper of Experience" [value]="exper">
+                    {{exper}}
+                </option>
+            </select>
+            </div>
+    
+    <br>
+          <label>Coding Languages:</label>
+        <div class="checkbox">
+                <input type="checkbox" id="c1" name="c" [(ngModel)]="model.ccpp">C/C++
+                <br>
+                <input type="checkbox" id="c2" name="java" [(ngModel)]="model.java">JAVA
+                <br>
+                <input type="checkbox" id="c3" name="php" [(ngModel)]="model.php">PHP
+                <br>
+                <input type="checkbox" id="c4" name="python" [(ngModel)]="model.python">Python
+        </div>
+    <br>
+     <button class="btn btn-primary" type="submit"  (click)="onSubmit(form.value); newHero(); form.reset()" [disabled]="!form.form.valid">Submit</button>
+    <br>    
+    <br>   
+    </form>
+   <!-- model:{{model|json}}
+    <br>
+    angular:{{form.value|json}}-->
+    </div>
