@@ -1,0 +1,49 @@
+<form>
+
+    First Name:
+    <input type="text" [(ngModel)]="e.firstName" id="fname" name="fname" placeholder="First Name" required/>
+    <br>
+    <br> Last Name:
+    <input type="text" id="lname" [(ngModel)]="e.lastName" name="lname" placeholder="Last Name" required/>
+    <br>
+    <br> Email:
+    <input type="email" [(ngModel)]="e.email" id="email" name="email" placeholder="Email ID" required/>
+    <br>
+    <br> Contact Number:
+    <input type="text" id="number" [(ngModel)]="e.contact" name="contact" placeholder="Phone Number" required/>
+    <br>
+    <br> Address:
+    <textarea id="address" [(ngModel)]="e.address" id="add" name="address" placeholder="Address"></textarea>
+    <br>
+    <br> Username:
+    <input type="text" [(ngModel)]="e.userName" id="username" name="username" placeholder="UserName" />
+    <br>
+    <br> Password:
+    <input type="password" [(ngModel)]="e.password" id="pass" name="password" placeholder="Password" />
+    <br>
+    <br> Gender:
+    <input type="radio" [(ngModel)]="e.gender" id="male" name="gender" value="male" /> Male
+    <input type="radio" [(ngModel)]="e.gender" id="female" name="gender" value="female" /> Female
+    <br>
+    <br> Qualification:
+    <select [(ngModel)]="e.qualification" id="qualification" name="qualification">
+        <option *ngFor="let qua of qualifications" [value]="qua">{{qua}}</option>
+    </select>
+    <br>
+    <br> Experience:
+    <select [(ngModel)]="e.experience" id="experience" name="experience">
+        <option *ngFor="let exp of experience" [value]="exp">{{exp}}</option>
+    </select>
+    <br>
+    <br> Coding Languages:
+    <div class="checkbox" *ngFor="let lang of codingLanguages">
+        <label>
+            <input type="checkbox" [id]="lang" (click)="e.add(lang)" name="languages" />{{lang}}</label>
+    </div>
+    <br>
+    <br>
+    <a [routerLink]="['/employees']" (click)='Onsubmit(e)'>
+        <input type="submit" id="submit" name="submit" value="Submit" />
+    </a>
+
+</form>
