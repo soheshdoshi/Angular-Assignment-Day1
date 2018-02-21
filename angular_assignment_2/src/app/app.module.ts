@@ -25,8 +25,8 @@ import { EmployeeDeleteComponent } from './Delete/Delete.component';
     RouterModule.forRoot([
       { path: 'employees', component: EmployeeListComponent },
       { path: 'add', component: EmployeeComponent },
-      { path: 'EditForm/:id', component: EmployeeEditComponent },
-      { path: 'Delete/:id', component: EmployeeDeleteComponent},
+      { path: 'editform/:id', component: EmployeeEditComponent },
+      { path: 'delete/:id', component: EmployeeDeleteComponent},
       { path: '', redirectTo: 'employees', pathMatch: 'full'},
       { path: '**', component:ErrorPageComponent }
     ])
